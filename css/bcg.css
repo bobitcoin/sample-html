@@ -1,0 +1,791 @@
+/*
+ *  File: bcg.css
+ *  Description: The CSS file that handles the customisation of the BCG Coming Soon page,
+ *  this will serve as the overrides of the BootStrap Framework
+ *  Date: 14th Sept 2023
+ */
+
+
+html {
+    min-height: 100%;
+}
+
+/*  
+ * Typography
+*/
+html,
+body {
+    background-color: #18232E;
+    color: #ffffff;
+    font-family: "Inter", "Poppins", sans-serif;
+    font-size: 20px;
+    line-height: 34px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+html.disable-y-scroll {
+    overflow-y: hidden;
+}
+
+body.index {
+	background-image: url( "../assets/images/featured-image/featured-image-1.webp" );
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 3125px;
+}
+
+a {
+    color: #F47400;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFEDDE;
+}
+
+h1 {
+    color: #ffffff;
+    font-family: "Poppins", "Inter", sans-serif;
+    font-size: 85px;
+    font-weight: 700;
+    letter-spacing: -5px;
+    line-height: 110px;
+}
+
+h2 {
+    color: #ffedde;
+    font-size: 43px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    line-height: 55.9px;
+}
+
+h3 {
+    color: #ffedde;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    line-height: 33.6px;
+}
+
+h4 {
+    color: #ffedde;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    line-height: 36px;
+}
+
+h5 {
+    color: #ffedde;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 34px;
+}
+
+h6 {
+    color: #ffedde;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+
+/*
+ *  Header, NavBar and Brand
+*/
+header {
+    width: 100%;
+}
+
+header > nav.navbar {
+    background-color: #000000 !important;
+    padding: 18px 0;
+}
+
+header > nav.navbar > .container-fluid {
+    padding: 0 24px;
+}
+
+
+/*
+ *  Language Switcher
+*/
+#btn_langauage_switcher {
+    color: #ffffff;
+    padding: 0;
+}
+
+#btn_langauage_switcher:focus, 
+#btn_langauage_switcher:active {
+    border: 0 none;
+    box-shadow: none;
+}
+
+#btn_langauage_switcher:after {
+    border-bottom: 0;
+    border-left: .48em solid transparent;
+    border-right: .48em solid transparent;
+    border-top: .48em solid;
+    transition: 0.7s;
+}
+
+#btn_langauage_switcher.show:after {
+    transform: rotate(180deg); 
+}
+
+.language-switcher-dropdown-menu {
+    background-color: transparent;
+    border-radius: 0;
+    border: 0 none;
+    color: #ffedde;
+    font-size: inherit;
+    min-width: auto;
+    padding: 0;
+}
+
+.language-switcher-dropdown-menu[data-bs-popper] {
+    margin-top: 5px;
+}
+
+
+/*  
+ * Containers, Rows and Columns
+*/
+
+.container, 
+.row {
+    position: relative;
+}
+
+.container-at-1030 {
+    max-width: 1030px !important;
+}
+
+.container-at-1140 {
+    max-width: 1140px !important;
+}
+
+.hide-section {
+    display: none;
+}
+
+
+/*  
+ * Sections and Contents
+*/
+
+.featured-image.mobile-image {
+    display: none;
+}
+
+.featured-image > img {
+    width: 100%;
+}
+
+.section-divider {
+    width: 141%;
+}
+
+.section-inner-divider {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.column-divider {
+	align-content: center;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	flex: none;
+	gap: 20px;
+	height: 100px;
+	justify-content: center;
+	overflow: hidden;
+	padding: 40px 0;
+}
+
+.section-divider-img {
+	display: block;
+	height: 100%;
+    left: -15%;
+	object-fit: fill;
+	object-position: center;
+	pointer-events: none;
+    position: absolute;
+	user-select: none;
+	width: 100%;
+}
+
+.bcg-countdown-timer-section {
+    background-color: transparent;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.countdown-timer-content-wrapper > h2 {
+    font-family: "Poppins", "Inter";
+    font-weight: 500;
+    line-height: 100%;
+}
+
+.countdown-timer-content-wrapper > h5 {
+    font-family: "Poppins", "Inter";
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 32px;
+    margin-top: 15px;
+}
+
+.countdown-timer-graphic-wrapper > img {
+    padding-top: 40px;
+    /* position: absolute; */
+}
+
+.bcg-benefits-section {
+    padding-bottom: 25px;
+    padding-top: 55px;
+}
+
+.bcg-benefits-section .section-title-row > h2 {
+    margin-bottom: 25px;
+}
+
+.bcg-why-bitcoingame-section {
+    padding-bottom: 70px;
+    padding-top: 112px;
+}
+
+.bcg-why-bitcoingame-section .section-title-row > h2 {
+    margin-bottom: 70px;
+}
+
+.bcg-footer-section {
+    background-color: #000000;
+    padding-top: 15px;
+    width: 100%;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-content > img {
+    margin-bottom: 20px;
+    max-width: 80%;
+}
+
+.footer-content > p {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+}
+
+/* .featured-image {
+    animation: fadeOut 1s ease-in 3s;
+    backdrop-filter: blur( 4px );
+    bottom: auto;
+    left: auto;
+    height: 100%;
+    padding: 40px 0;
+    position: absolute;
+    right: auto;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.featured-image > img {
+    box-shadow: 0px 0px 30px 15px rgba(255,255,255,0.60);
+        -moz-box-shadow: 0px 0px 30px 15px rgba(255,255,255,0.60);
+        -webkit-box-shadow: 0px 0px 30px 15px rgba(255,255,255,0.60);
+    border-radius: 20px;
+    max-width: 80%;
+}
+
+.featured-image.hide {
+    display: none;
+    position: relative;
+} */
+
+
+/*  
+ * Countdown Timer
+*/
+
+.countdown-timer-wrapper {
+    background-image: none;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    margin-bottom: 10px;
+    margin-top: 12px;
+    /* min-height: 245px; */
+    min-height: 200px;
+    padding-left: 27px;
+}
+
+.countdown-timer-wrapper.loading-timer {
+    background-image: url( "../assets/images/loadings/dual-ball-loading-1s-200px.gif" );
+}
+
+.units-of-time-wrapper {
+    position: relative;
+    text-align: center;
+}
+
+.units-of-time-wrapper.fade-in {
+    animation: fadeIn 2s;
+}
+
+.time-segment {
+    display: inline-block;
+    margin-left: -27px;
+    vertical-align: top;
+}
+
+.segment-days > .unit-time-number,
+.segment-minutes > .unit-time-number {
+    background-color: #42e4c8;
+    border-color: #31b397;
+    /* border: 20px solid #31b397; */
+}
+
+.segment-hours > .unit-time-number,
+.segment-seconds > .unit-time-number {
+    background-color: #ffc039;
+    border-color: #F47400;
+    /* border: 20px solid #F47400; */
+}
+
+/* .unit-time-number {   
+    border-radius: 50%;
+    height: 190px;
+    margin-bottom: 18px;
+    mix-blend-mode: screen;
+    width: 190px;
+} */
+
+.unit-time-number {
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 15px;
+    height: 150px;
+    margin-bottom: 12px;
+    mix-blend-mode: screen;
+    width: 150px;
+} 
+
+/* .unit-time-number > h3 {
+    color: #ffffff;
+    font-family: "Poppins", "Inter", sans-serif;
+    font-size: 80px;
+    font-weight: 500;
+    line-height: 140px;
+    text-align: center;
+} */
+
+.unit-time-number > h3 {
+    color: #ffffff;
+    font-family: "Poppins", "Inter", sans-serif;
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 115px;
+    text-align: center;
+}
+
+.unit-colon > h3 {
+    color: #ffffff;
+    font-family:  "Poppins", "Inter", sans-serif;
+    font-size: 92px;
+    font-weight: 300;
+    line-height: 160px;
+    position: relative;
+    text-align: center;
+}
+
+.unit-time-text > h4 {
+    /* color: #354E64; */
+    color: #DDDDDD;
+    font-family: "Poppins", "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+
+/* PSV Sponsorhip */
+.psv-sponsorship {
+    padding: 30px 0;
+}
+
+.psv-sponsorship > img,
+.psv-sponsorship > h5 {
+    display: inline-block;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+.psv-sponsorship > img {
+    width: 150px;
+}
+
+
+/*  
+ * Image Box 1
+*/
+.image-box-container {
+    background-color: #FFEDDE;
+    border-color: #000000;
+    border-radius: 20px 20px 20px 20px;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    box-shadow: 0px 6px 0px 0px #000000;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 25px 34px 25px 34px;
+}
+
+.image-box-wrapper {
+    text-align: center;
+}
+
+.image-box-image {
+    margin-bottom: 12px;
+}
+
+.image-box-content {
+    padding: 0 6px;
+}
+
+.image-box-title {
+    color: #000000;
+    font-size: 33px;
+    line-height: 55.9px;
+}
+
+.image-box-description {
+    color: #666666;
+    font-size: 16px;
+    line-height: 25.6px;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+
+/* Blurb 1 */
+.blurb-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.blurb-image {
+    margin-bottom: 0;
+    margin-right: 20px;
+    text-align: center;
+    width: 45%;
+}
+
+.blurb-image > img {
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.blurb-content {
+    width: 100%;
+}
+
+.blurb-title {
+    color: #FFEDDE;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    line-height: 33.6px;
+    margin-bottom: 19px;
+}
+
+.blurb-description {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 34px;
+}
+
+/* Blurb 2 */
+
+.blurb-wrapper-2 {
+    display: block;
+    text-align: center;
+}
+
+.blurb-wrapper-2 > .blurb-image,
+.blurb-wrapper-2 > .blurb-content {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.blurb-wrapper-2 > .blurb-image {
+    width: 20%;
+}
+
+.blurb-wrapper-2 > .blurb-content {
+    text-align: left;
+    width: 50%;
+}
+
+.blurb-wrapper-2 > .blurb-content > h3.blurb-title {
+    margin-bottom: 0;
+}
+
+
+/* Modals */
+#bcgModalPopup {
+    backdrop-filter: blur( 4px );
+    padding-right: 0 !important;
+
+}
+
+.modal-xl {
+    max-width: 62%;
+}
+
+.modal-header {
+    padding: 0;
+}
+
+.modal-body {
+    background-color: #18232E;
+    background-image: url( "../assets/images/graphics/graphic-14.webp" );
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.modal-footer {
+    padding: 0;
+}
+
+.modal-footer > * {
+    margin: 0;
+}
+
+
+/*  
+ * Simple Animations
+*/
+.beat-it {
+    animation: 6s ease 0s infinite beat-in-minutes;
+}
+
+.minutes-beat {
+    animation: 3s ease 0s infinite beat-in-minutes;
+}
+
+.seconds-beat {
+    animation: 3s ease 0s infinite beat-in-seconds;
+}
+
+@keyframes fadeIn {
+    0% { 
+        opacity: 0; 
+    }
+    100% { 
+        opacity: 1; 
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes beat-in-seconds {
+    0%, 50%, 100% { 
+        transform: scale( 1, 1 ); 
+    }
+    30%, 80% { 
+        transform: scale( 0.92, 0.95 ); 
+    }
+}
+
+@keyframes beat-in-minutes {
+    0%, 50%, 100% { 
+        transform: scale( 1.2, 1.2 ); 
+    }
+    30%, 80% { 
+        transform: scale( 0.92, 0.95 ); 
+    }
+}
+
+
+/*
+ * Media Queries  
+*/
+
+@media only screen and ( max-width: 1780px ) {
+
+    h1 {
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    .countdown-timer-graphic-column {
+        margin-top: auto !important;
+        margin-bottom: auto !important;
+    }
+
+    .countdown-timer-wrapper {
+        min-height: auto;
+        padding-left: 0;
+    }
+
+    .unit-time-number {
+        height: 150px;
+        width: 150px;
+    }
+
+    .unit-time-number > h3 {
+        font-size: 50px;
+        line-height: 105px;
+    }
+
+    .unit-colon > h3 {
+        font-size: 70px;
+        line-height: 130px;
+    }
+
+    .unit-time-text > h4 {
+        font-size: 20px;
+    }
+
+}
+
+@media only screen and ( max-width: 1584px ) {
+
+    .countdown-timer-graphic-wrapper > img {
+        position: relative;
+    }
+
+}
+
+@media only screen and ( min-width: 1400px ) {
+
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1370px;
+    }
+
+}
+
+@media only screen and ( max-width: 1380px ) {
+
+    .modal-xl {
+        max-width: 80%;
+    }
+
+}
+
+@media only screen and ( max-width: 580px ) {
+    
+    header > nav.navbar {
+        padding: 10px;
+    } 
+
+    header > nav.navbar > .container-fluid {
+        padding: 0;
+    }
+
+    .navbar-brand {
+        margin: 0px auto 5px auto;
+    }
+
+    #language_switcher {
+        align-content: center;
+        align-items: center;
+        flex-direction: column !important;
+        width: 100%;
+    }
+
+    .bcg-countdown-timer-section {
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+
+    .time-segment {
+        margin-bottom: 20px;
+        margin-left: auto;
+    }
+
+    .unit-colon  {
+        display: none;
+    }
+
+    .bcg-why-bitcoingame-section {
+        padding-bottom: 50px;
+        padding-top: 50px;
+    }
+
+    .blurb-wrapper {
+        flex-direction: column;
+    }
+
+    .blurb-image {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .blurb-wrapper-2 > .blurb-image {
+        width: 100%;
+    }
+
+    .blurb-wrapper-2 > .blurb-image > img {
+        max-width: 50%;
+    }
+
+    .blurb-content {
+        text-align: center;
+    }
+
+    .blurb-wrapper-2 > .blurb-content {
+        text-align: center;
+        width: 100%;
+
+    }
+
+    .modal-xl {
+        max-width: 80%;
+        margin: 15px auto;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 50px;
+        letter-spacing: 0;
+        line-height: 55px;
+    }
+}
+
+@media only screen and ( max-width: 480px ) {
+
+    .featured-image.desktop-image {
+        display: none;
+    }
+
+    .featured-image.mobile-image {
+        display: block;
+    }
+
+}

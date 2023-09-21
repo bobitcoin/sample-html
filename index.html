@@ -1,133 +1,314 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ko">
+  
+  <head>
+    <title>Bitcoin.Game | 곧 출시됩니다! </title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>#000000</title>
-    <link type="image/x-icon" rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHklEQVQ4T2NkYGD4z0ABYBw1gGE0DBhGw4BhWIQBAE5OEAELnjVHAAAAAElFTkSuQmCC">
-    <style>
-        :root {
-            --color: #000000;
-            --color-transparent: #00000022;
-        }
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.webp" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.webp" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.webp" />
 
-        ::selection {
-            background: var(--color-transparent);
-        }
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        html,
-        body {
-            background: var(--color);
-            height: 100%;
-            margin: 0;
-        }
+    <!-- Bootstrap CSS -->
+    <link href="libraries/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" />
 
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
+    <!-- Custom Fonts - Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
 
-        #color {
-            background: white;
-            color: var(--color);
-            font-size: 2.5rem;
-            font-weight: 300;
-            padding: 2.25rem 3rem;
-            font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-            cursor: text;
-        }
-    </style>
-</head>
+    <!-- Bitcoin.Game CSS -->
+    <link href="css/bcg.css" rel="stylesheet" />
 
-<body>
-    <p id="color">#000000</p>
-    <script>
-        function randomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min);
-        }
+  </head>
 
-        function hslToHex(h, s, l) {
-            h /= 360;
-            s /= 100;
-            l /= 100;
-            var r = void 0,
-                g = void 0,
-                b = void 0;
-            if (s === 0) {
-                r = g = b = l; // achromatic
-            } else {
-                var hue2rgb = function hue2rgb(p, q, t) {
-                    if (t < 0) t += 1;
-                    if (t > 1) t -= 1;
-                    if (t < 1 / 6) return p + (q - p) * 6 * t;
-                    if (t < 1 / 2) return q;
-                    if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-                    return p;
-                };
-                var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-                var p = 2 * l - q;
-                r = hue2rgb(p, q, h + 1 / 3);
-                g = hue2rgb(p, q, h);
-                b = hue2rgb(p, q, h - 1 / 3);
-            }
-            var toHex = function toHex(x) {
-                var hex = Math.round(x * 255).toString(16);
-                return hex.length === 1 ? '0' + hex : hex;
-            };
-            return '#' + toHex(r) + toHex(g) + toHex(b);
-        }
+  <body class="index-ko">
 
-        window.onload = function () {
-            let stopProp = function (ev) {
-                ev.stopPropagation();
-            }
+    <main id="page_content">
+        <div class="featured-image desktop-image">
+            <img class="img-fluid" src="assets/images/featured-image/featured-image-3.webp" alt="Featured Image Desktop View" />
+        </div>
+        <div class="featured-image mobile-image">
+            <img class="img-fluid" src="assets/images/featured-image/featured-image-2.webp" alt="Featured Image Mobile View" />
+        </div>
+    </main>
 
-            var colorElement = document.getElementById("color");
-            colorElement.addEventListener("click", stopProp, false);
-            colorElement.addEventListener("mousedown", stopProp, false);
+    <!-- Modal -->
+    <div class="modal fade" id="bcgModalPopup" tabindex="-1" role="dialog" aria-labelledby="bcgModalPopupLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <header>
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                          <div class="container-fluid">
+                            <!-- Brand -->
+                            <a class="navbar-brand" href="#">
+                              <img src="assets/images/logos/bcg-logo-1.webp" class="img-fluid" alt="BitCoin.Game Logo" />
+                            </a>
+                  
+                            <!-- Language Switcher -->
+                            <div id="language_switcher" class="d-flex flex-row-reverse language-switcher-wrapper">
+                              <div class="dropdown language-switcher-dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="btn_langauage_switcher" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <img src="assets/images/flags/ko_KR.png" alt="한국어" />
+                                </button>
+                                <ul class="dropdown-menu language-switcher-dropdown-menu" aria-labelledby="btn_langauage_switcher">
+                                  <li>
+                                    <a href="index-en.html" title="Switch to English">
+                                      <img src="assets/images/flags/en_US.png" alt="English" />
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </nav>
+                    </header>
+                </div>
+                <div class="modal-body">
 
-            var setFavicon = function (hex) {
-                var canvas = document.createElement('canvas');
-                canvas.width = 16;
-                canvas.height = 16;
-                var ctx = canvas.getContext('2d');
-                ctx.fillStyle = hex;
-                ctx.fillRect(0, 0, 16, 16);
-                document.getElementsByTagName('link')[0].href = canvas.toDataURL("image/x-icon");
-            }
+                    <!-- Countdown Timer Banner Section -->
+                    <section id="countdown_timer_section" class="bcg-section bcg-countdown-timer-section">
+                        <div class="container">
+                            <div class="row">
+                                
+                                <div class="col-lg-12 countdown-timer-content-column mb-2">
+                                    <div class="countdown-timer-content-wrapper">
+                                        <h1 class="text-center">곧 출시 예정</h1>
 
-            var setRandomColor = function setRandomColor() {
-                var h = void 0,
-                    s = void 0,
-                    l = void 0;
+                                        <!-- Our Countdown Timer -->
+                                        <div id="countdown_timer_wrapper" class="countdown-timer-wrapper loading-timer">
+                                            <div id="countdown_timer"></div>
+                                        </div>
 
-                h = randomInt(0, 359);
-                s = randomInt(55, 75);
-                l = randomInt(40, 60);
+                                        <h2 class="text-center">...출시까지!</h2>
+                                        <!-- <h5 class="text-center">PSV 아이트호벤 공식 스폰서십 체결</h5> -->
 
-                document.documentElement.style.setProperty('--color', 'hsl(' + h + ', ' + s + '%, ' + l + '%)');
-                var hex = hslToHex(h, s, l);
-                document.title = hex;
-                colorElement.innerHTML = hex;
-                document.documentElement.style.setProperty('--color-transparent', hex + '22');
+                                        <div class="psv-sponsorship text-center">
+                                            <img src="assets/images/logos/psv-eindhoven-logo-1.webp" alt="PSV 아이트호벤" /> <h5> 공식 스폰서십 체결 </h5>
+                                        </div>
 
-                setFavicon(hex);
-            };
-            setRandomColor();
+                                    </div>
+                                </div>
 
-            var body = document.getElementsByTagName("body")[0];
-            body.addEventListener("mousedown", function (ev) {
-                ev.preventDefault();
-            });
-            body.addEventListener("click", function () {
-                setRandomColor();
-            }, false);
-        };
-    </script>
-</body>
+                                <div class="col-lg-12 countdown-timer-blurbs-column">
+                                    <div class="countdown-timer-blurbs-wrapper">
+                                        <div class="row section-title-row">
+                                            <h2 class="text-center">300명 한정 특별 혜택</h2>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-1">
+                                                <div class="blurb-container h-100 left-aligned">
+                                                    <div class="blurb-wrapper blurb-wrapper-2">
+                                                        <figure class="blurb-image">
+                                                            <img class="img-fluid" src="assets/images/graphics/graphic-10.webp" alt="100USDT 지급" />
+                                                        </figure>
+                                                        <div class="blurb-content">
+                                                            <h3 class="blurb-title">100USDT 지급</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-1">
+                                                <div class="blurb-container h-100 left-aligned">
+                                                    <div class="blurb-wrapper blurb-wrapper-2">
+                                                        <figure class="blurb-image">
+                                                            <img class="img-fluid" src="assets/images/graphics/graphic-11.webp" alt="한정판 굿즈박스 제공" />
+                                                        </figure>
+                                                        <div class="blurb-content">
+                                                            <h3 class="blurb-title">한정판 굿즈박스 제공</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-1">
+                                                <div class="blurb-container h-100 left-aligned">
+                                                    <div class="blurb-wrapper blurb-wrapper-2">
+                                                        <figure class="blurb-image">
+                                                            <img class="img-fluid" src="assets/images/graphics/graphic-12.webp" alt="자체 발행 코인 우선 구매" />
+                                                        </figure>
+                                                        <div class="blurb-content">
+                                                            <h3 class="blurb-title">자체 발행 코인 우선 구매</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-1">
+                                                <div class="blurb-container h-100 left-aligned">
+                                                    <div class="blurb-wrapper blurb-wrapper-2">
+                                                        <figure class="blurb-image">
+                                                            <img class="img-fluid" src="assets/images/graphics/graphic-13.webp" alt="수익형 NFT 우선 구매" />
+                                                        </figure>
+                                                        <div class="blurb-content">
+                                                            <h3 class="blurb-title">수익형 NFT 우선 구매</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="col-lg-5 countdown-timer-graphic-column">
+                                    <div class="countdown-timer-graphic-wrapper">
+                                        <img src="assets/images/graphics/graphic-2.webp"  alt="Coming Soon Graphic" class="img-fluid" />
+                                    </div>
+                                </div> -->
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section Divider -->
+                    <div class="section-divider hide-section">
+                        <div class="section-inner-divider">
+                        <div class="column-divider d-flex">
+                            <img class="section-divider-img" src="assets/images/dividers/dark-divider-3.webp" alt="Section Divider" />
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Benefits -->
+                    <section id="benefits_section" class="bcg-section bcg-benefits-section hide-section">
+                        <div class="container container-at-1030">
+                        <div class="row section-title-row">
+                            <h2 class="text-center">300명 한정! 특별 혜택 제공</h2>
+                        </div>
+                        <div class="row gx-3">
+                            <div class="col-md-4 mb-3">
+                            <div class="image-box-container h-100">
+                                <div class="image-box-wrapper">
+                                <figure class="image-box-image">
+                                    <img class="img-fluid" src="assets/images/graphics/graphic-3.webp" alt="$100 USDT Graphic" />
+                                </figure>
+                                <div class="image-box-content">
+                                    <h3 class="image-box-title">$100 USDT</h3>
+                                    <p class="image-box-description">선택된 300명에게 아무 조건 <br/> 없이 100$를 드립니다! </p>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                            <div class="image-box-container h-100">
+                                <div class="image-box-wrapper">
+                                <figure class="image-box-image">
+                                    <img class="img-fluid" src="assets/images/graphics/graphic-4.webp" alt="Limited Edition" />
+                                </figure>
+                                <div class="image-box-content">
+                                    <h3 class="image-box-title">한정판 굿즈</h3>
+                                    <p class="image-box-description">비트코인게임이 특별 제작한 <br/> 한정판 굿즈를 드립니다!</p>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                            <div class="image-box-container h-100">
+                                <div class="image-box-wrapper">
+                                <figure class="image-box-image">
+                                    <img class="img-fluid" src="assets/images/graphics/graphic-5.webp" alt="Coin Presale" />
+                                </figure>
+                                <div class="image-box-content">
+                                    <h3 class="image-box-title">코인 프리세일</h3>
+                                    <p class="image-box-description">비트코인게임 자체 제작 토큰의 우선 구매 권한을 드립니다!</p>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </section>
+
+                    <!-- Why "Bitcoin.Game" -->
+                    <section id="why_bitcoin_section" class="bcg-section bcg-why-bitcoingame-section hide-section">
+                        <div class="container container-at-1140">
+                            <div class="row section-title-row">
+                                <h2 class="text-center">왜 "비트코인게임" 인가?</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-5">
+                                <div class="blurb-container h-100 left-aligned">
+                                    <div class="blurb-wrapper">
+                                    <figure class="blurb-image">
+                                        <img class="img-fluid" src="assets/images/graphics/graphic-6.webp" alt="Overwhelming Financial Power" />
+                                    </figure>
+                                    <div class="blurb-content">
+                                        <h3 class="blurb-title">압도적인 자금력</h3>
+                                        <p class="blurb-description">비트코인게임은 풍부한 재정으로 경쟁사들을 앞섭니다. 우리의 투자력과 재무 안정성은 플레이어들에게 깊은 신뢰감을 줍니다.</p>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col-md-12 mb-5">
+                                <div class="blurb-container h-100 left-aligned">
+                                    <div class="blurb-wrapper">
+                                    <figure class="blurb-image">
+                                        <img class="img-fluid" src="assets/images/graphics/graphic-7.webp" alt="PLAY TO EARN" />
+                                    </figure>
+                                    <div class="blurb-content">
+                                        <h3 class="blurb-title">PLAY TO EARN</h3>
+                                        <p class="blurb-description">기존 게임에서는 볼 수 없던 카지노 게임을 플레이만 해도 자체 발행 코인을 자동으로 채굴할 수 있어 단순히 즐기는 것이 아닌 게임 플레이가 직접적인 수익으로 연결되는 독특한 메커니즘을 제공합니다. </p>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col-md-12 mb-5">
+                                <div class="blurb-container h-100 left-aligned">
+                                    <div class="blurb-wrapper">
+                                    <figure class="blurb-image">
+                                        <img class="img-fluid" src="assets/images/graphics/graphic-8.webp" alt="Profitable NFT" />
+                                    </figure>
+                                    <div class="blurb-content">
+                                        <h3 class="blurb-title">수익형 NFT</h3>
+                                        <p class="blurb-description">자체 코인으로 구매 가능한 NFT를 도입하여 멤버들만이 큰 가치를 지닌 디지털 자산을 소유할 수 있고 이를 보유하기만 해도 우리의 동반자로서 수익금의 일정 부분을 지속적으로 지급받을 수 있는 특별한 기회를 제공합니다.</p>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col-md-12 mb-5">
+                                <div class="blurb-container h-100 left-aligned">
+                                    <div class="blurb-wrapper">
+                                    <figure class="blurb-image">
+                                        <img class="img-fluid" src="assets/images/graphics/graphic-9.webp" alt="Self-issued Token" />
+                                    </figure>
+                                    <div class="blurb-content">
+                                        <h3 class="blurb-title">자체 발행 토큰</h3>
+                                        <p class="blurb-description">자체 코인은 채굴 또는 유명한 거래소를 통해 구매할 수 있으며, 플랫폼 내에서 베팅에 사용할 수 있습니다. 총 발행량의 제한으로 코인의 고유 가치를 높이고 다양한 컨텐츠 개발로 가치를 상승시켜 매력적인 투자 기회를 제공합니다.</p>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+                <div class="modal-footer">
+                    <section id="footer_section" class="bcg-footer-section">
+                        <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                            <div class="footer-content">
+                                <img class="img-fluid" src="assets/images/logos/bcg-logo-1.webp" alt="Bitcoin.Game Logo" />
+                                <p> &copy; 2023 Bitcoin.Game </p>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="libraries/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bitcoin.Game JS -->
+    <script src="js/bcg.js"></script>
+
+  </body>
 
 </html>
