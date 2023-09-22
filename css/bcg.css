@@ -712,7 +712,7 @@ header > nav.navbar > .container-fluid {
 @media only screen and ( max-width: 580px ) {
 	
 	.modal-xl {
-        max-width: 80%;
+        max-width: 90%;
         margin: 15px auto;
         width: 100%;
     }
