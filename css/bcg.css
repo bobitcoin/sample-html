@@ -765,15 +765,15 @@ header > nav.navbar > .container-fluid {
     }
 	
 	.unit-time-number {
-		border-width: 8px;
-		height: 80px;
+		border-width: 6px;
+		height: 70px;
 		margin-top: -10px;
-		margin-left: -15px;
-		width: 80px;
+		margin-left: -18px;
+		width: 70px;
 	}
 	
 	.unit-time-number > h3 {
-		font-size: 38px;
+		font-size: 32px;
 		line-height: 65px;
 	}
 	
