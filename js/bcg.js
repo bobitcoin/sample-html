@@ -4,20 +4,15 @@ function openPopupWindow() {
         'backdrop' : 'static',
         'keyboard' : false
     } );
-
-    document.documentElement.className = 'disable-y-scroll';
-
-    modalBCGPopupWindow.toggle();
-
-    
+        
     // Show the modal again after 3 seconds
-    /* setTimeout( () => {
+    setTimeout( () => {
 
         document.documentElement.className = 'disable-y-scroll';
 
         modalBCGPopupWindow.toggle();
 
-    }, 5000 ); */
+    }, 3000 );
 
 }
 openPopupWindow();

@@ -48,26 +48,26 @@ a:hover {
 h1 {
     color: #ffffff;
     font-family: "Poppins", "Inter", sans-serif;
-    font-size: 85px;
+    font-size: 40px;
     font-weight: 700;
-    letter-spacing: -5px;
-    line-height: 110px;
+    letter-spacing: -3px;
+    line-height: 45px;
 }
 
 h2 {
     color: #ffedde;
-    font-size: 43px;
+    font-size: 28px;
     font-weight: 700;
     letter-spacing: -0.8px;
-    line-height: 55.9px;
+    line-height: 32px;
 }
 
 h3 {
     color: #ffedde;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 700;
     letter-spacing: -0.8px;
-    line-height: 33.6px;
+    line-height: 33px;
 }
 
 h4 {
@@ -80,9 +80,9 @@ h4 {
 
 h5 {
     color: #ffedde;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
-    line-height: 34px;
+    line-height: 25px;
 }
 
 h6 {
@@ -224,7 +224,7 @@ header > nav.navbar > .container-fluid {
 .bcg-countdown-timer-section {
     background-color: transparent;
     padding-bottom: 20px;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 .countdown-timer-content-wrapper > h2 {
@@ -326,8 +326,9 @@ header > nav.navbar > .container-fluid {
     background-size: auto auto;
     margin-bottom: 10px;
     margin-top: 12px;
-    /* min-height: 245px; */
-    min-height: 200px;
+    /* min-height: 245px; 
+    min-height: 200px; */
+	min-height: auto;
     padding-left: 27px;
 }
 
@@ -346,7 +347,7 @@ header > nav.navbar > .container-fluid {
 
 .time-segment {
     display: inline-block;
-    margin-left: -27px;
+    margin-left: -20px;
     vertical-align: top;
 }
 
@@ -403,9 +404,9 @@ header > nav.navbar > .container-fluid {
 .unit-colon > h3 {
     color: #ffffff;
     font-family:  "Poppins", "Inter", sans-serif;
-    font-size: 92px;
+    font-size: 80px;
     font-weight: 300;
-    line-height: 160px;
+    line-height: 135px;
     position: relative;
     text-align: center;
 }
@@ -422,18 +423,26 @@ header > nav.navbar > .container-fluid {
 
 /* PSV Sponsorhip */
 .psv-sponsorship {
-    padding: 30px 0;
+    padding: 10px 0px 20px 0px;
 }
 
-.psv-sponsorship > img,
+/* .psv-sponsorship > img,
 .psv-sponsorship > h5 {
     display: inline-block;
     margin: 0 5px;
     vertical-align: middle;
+} */
+
+.psv-sponsorship > img,
+.psv-sponsorship > h5 {
+    display: block;
+    margin: 0 auto;
+    vertical-align: middle;
 }
 
 .psv-sponsorship > img {
-    width: 150px;
+	margin-bottom: 5px;
+    width: 100px;
 }
 
 
@@ -505,10 +514,10 @@ header > nav.navbar > .container-fluid {
 
 .blurb-title {
     color: #FFEDDE;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: -0.8px;
-    line-height: 33.6px;
+    line-height: 25px;
     margin-bottom: 19px;
 }
 
@@ -637,10 +646,11 @@ header > nav.navbar > .container-fluid {
 */
 
 @media only screen and ( max-width: 1780px ) {
-
-    h1 {
-        font-size: 60px;
-        line-height: 80px;
+	
+	h1 {
+        font-size: 30px;
+        letter-spacing: 0;
+        line-height: 35px;
     }
 
     .countdown-timer-graphic-column {
@@ -650,12 +660,13 @@ header > nav.navbar > .container-fluid {
 
     .countdown-timer-wrapper {
         min-height: auto;
-        padding-left: 0;
+        padding-left: 8px;
     }
 
     .unit-time-number {
-        height: 150px;
-        width: 150px;
+		border-width: 12px;
+        height: 125px;
+        width: 125px;
     }
 
     .unit-time-number > h3 {
@@ -664,12 +675,12 @@ header > nav.navbar > .container-fluid {
     }
 
     .unit-colon > h3 {
-        font-size: 70px;
-        line-height: 130px;
+        font-size: 55px;
+        line-height: 110px;
     }
 
     .unit-time-text > h4 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
 }
@@ -693,12 +704,22 @@ header > nav.navbar > .container-fluid {
 @media only screen and ( max-width: 1380px ) {
 
     .modal-xl {
-        max-width: 80%;
+        max-width: 90%;
     }
 
 }
 
 @media only screen and ( max-width: 580px ) {
+	
+	.modal-xl {
+        max-width: 80%;
+        margin: 15px auto;
+        width: 100%;
+    }
+	
+	.modal-body {
+		background-size: auto;
+	}
     
     header > nav.navbar {
         padding: 10px;
@@ -709,15 +730,25 @@ header > nav.navbar > .container-fluid {
     }
 
     .navbar-brand {
-        margin: 0px auto 5px auto;
+    	margin: 0;
+		padding: 0;
+		width: 80%;
     }
 
     #language_switcher {
         align-content: center;
         align-items: center;
         flex-direction: column !important;
-        width: 100%;
+        width: 18%;
     }
+	
+	#btn_langauage_switcher {
+		font-size: 14px;
+	}
+	
+	#language_switcher img {
+		width: 25px;
+	}
 
     .bcg-countdown-timer-section {
         padding-bottom: 20px;
@@ -732,27 +763,50 @@ header > nav.navbar > .container-fluid {
     .unit-colon  {
         display: none;
     }
+	
+	.unit-time-number {
+		border-width: 8px;
+		height: 80px;
+		margin-top: -10px;
+		margin-left: -15px;
+		width: 80px;
+	}
+	
+	.unit-time-number > h3 {
+		font-size: 38px;
+		line-height: 65px;
+	}
+	
+	.unit-time-text {
+		margin-top: -8px;
+	}
+	
+	.unit-time-text > h4 {
+		font-size: 12px;
+	}
 
     .bcg-why-bitcoingame-section {
         padding-bottom: 50px;
         padding-top: 50px;
     }
+	
+	.countdown-timer-blurbs-wrapper h2 {
+		font-size: 22px;
+		line-height: 25px;
+	}
 
     .blurb-wrapper {
         flex-direction: column;
+		text-align: left;
     }
 
     .blurb-image {
-        margin-bottom: 20px;
+        margin-bottom: 0;
         margin-right: 0;
     }
 
     .blurb-wrapper-2 > .blurb-image {
-        width: 100%;
-    }
-
-    .blurb-wrapper-2 > .blurb-image > img {
-        max-width: 50%;
+        width: 28%;
     }
 
     .blurb-content {
@@ -761,21 +815,19 @@ header > nav.navbar > .container-fluid {
 
     .blurb-wrapper-2 > .blurb-content {
         text-align: center;
-        width: 100%;
+        width: 70%;
 
     }
-
-    .modal-xl {
-        max-width: 80%;
-        margin: 15px auto;
-        width: 100%;
-    }
-
-    h1 {
-        font-size: 50px;
-        letter-spacing: 0;
-        line-height: 55px;
-    }
+	
+	.blurb-wrapper-2 > .blurb-content > h3.blurb-title {
+		font-size: 18px;
+		line-height: 22px;
+	}
+	
+	.psv-sponsorship {
+		margin-top: -20px;
+		padding: 0;
+	}
 }
 
 @media only screen and ( max-width: 480px ) {
