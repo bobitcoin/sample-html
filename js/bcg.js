@@ -21,7 +21,7 @@ openPopupWindow();
 
 function countDownTimer() {
     // Set the date we're counting down to
-    var countDownDate = new Date( "Oct 16, 2023 00:00:00" ).getTime();
+    var countDownDate = new Date( "Nov 1, 2023 00:00:00" ).getTime();
     var entrance_animation = false;
     var entrance_amination_class = '';
     var language = document.documentElement.lang;
@@ -130,7 +130,7 @@ function countDownTimer() {
             // document.getElementById("demo").innerHTML = "EXPIRED";
         }
 
-        clearInterval(x);
+        /* clearInterval(x); */
         
         entrance_animation = true;
         
@@ -138,6 +138,7 @@ function countDownTimer() {
     }, 1000 );
 }
 countDownTimer();
+
 
 
 function disableFeaturedImage() {
