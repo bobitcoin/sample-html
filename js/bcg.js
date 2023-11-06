@@ -21,7 +21,7 @@ openPopupWindow();
 
 function countDownTimer() {
     // Set the date we're counting down to
-    var countDownDate = new Date( "Nov 1, 2023 00:00:00" ).getTime();
+    var countDownDate = new Date( "Nov 8, 2023 00:00:00" ).getTime();
     var entrance_animation = false;
     var entrance_amination_class = '';
     var language = document.documentElement.lang;
